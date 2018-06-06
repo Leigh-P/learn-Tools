@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript">
+    window.addEventListener("load",eventWindowLoaded,false);
+    function eventWindowLoaded(){
+        canvasApp();
+    }
+    function canvasApp(){
+        var theCanvas=document.getElementById("canvas");
+        var context=theCanvas.getContext("2d")
+        context.strokeStyle="black";
+        context.lineWidth=10;
+        context.lineJoin='bevel';
+        context.lineCap='round';
+        context.beginPath();
+        context.moveTo(0,0);
+        context.lineTo(25,0);
+        context.lineTo(25,25);
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(10,50);
+        context.lineTo(35,50);
+        context.lineTo(35,75);
+        context.stroke()
+        context.closePath();
+
+        context.beginPath();
+        context.lineJoin='round';
+        context.lineCap='butt';
+        context.moveTo(10,100);
+        context.lineTo(35,100);
+        context.lineTo(35,125);
+        context.stroke();
+        context.closePath();
+    }
+    //lineCap:butt,square,round;
+    //lineJoin:miter,bevel,round;Sans-Serif
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div style="position:absolute;top:50px;left:50px">
+        <canvas id="canvas" height="500" width="500">Your browser does not support HTML5 Canvas.</canvas>
+    </div>
+</body>
+</html>
